@@ -15,18 +15,18 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Grow random commits 🌱
+      - name: Water the garden 🌿
         run: |
-          COMMITS=$(( (RANDOM % 5) + 1 ))
-          echo "Making $COMMITS commits today..."
+          COMMITS=$(( (RANDOM % 3) + 1 ))
+          echo "Planting $COMMITS seeds today..."
 
           git config user.name "${{ github.actor }}"
           git config user.email "${{ github.actor }}@users.noreply.github.com"
 
           for i in $(seq 1 $COMMITS); do
-            echo "$(date -u +%F) — greenbot pulse #$i" >> .keepalive
+            echo "$(date -u +%F) — seed planted #$i" >> .keepalive
             git add .keepalive
-            git commit -m "chore: grow grass 🌱 commit $i/$COMMITS"
+            git commit -m "planting $COMMITS green seeds 🌱"
             git push
             sleep 5
           done
