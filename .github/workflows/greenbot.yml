@@ -15,19 +15,18 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Grow the grass 🌱
+      - name: Grow random commits 🌱
         run: |
-          echo "$(date -u +%F) — greenbot pulse" >> .keepalive
+          COMMITS=$(( (RANDOM % 5) + 1 ))
+          echo "Making $COMMITS commits today..."
 
-      - name: Commit & push if changed
-        run: |
           git config user.name "${{ github.actor }}"
           git config user.email "${{ github.actor }}@users.noreply.github.com"
 
-          if [ -n "$(git status --porcelain)" ]; then
+          for i in $(seq 1 $COMMITS); do
+            echo "$(date -u +%F) — greenbot pulse #$i" >> .keepalive
             git add .keepalive
-            git commit -m "chore: grow the grass 🌱 $(date -u +%F)"
+            git commit -m "chore: grow grass 🌱 commit $i/$COMMITS"
             git push
-          else
-            echo "No grass to grow today."
-          fi
+            sleep 5
+          done
