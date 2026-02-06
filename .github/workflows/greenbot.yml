@@ -3,7 +3,8 @@ name: greenbot
 on:
   schedule:
     # 00:00 UTC+7 (WIB) == 17:00 UTC
-    - cron: "0 17 * * *"
+    # Run only Monday–Friday
+    - cron: "0 17 * * 1-5"
   workflow_dispatch: {}
 
 permissions:
