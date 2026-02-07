@@ -26,16 +26,3 @@ Each day, it:
 3. It appends lines into `.keepalive`  
 4. It commits and pushes those changes  
 5. GitHub updates your contribution graph  
-
----
-
-## 🚀 Setup
-
-### 1. Create a new repository
-- Name it anything (example: `greenbot`)
-- Set default branch to `main`
-
----
-
-### 2. Create workflow file
-Create this file in your repo:
