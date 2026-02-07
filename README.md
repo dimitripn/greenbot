@@ -8,8 +8,6 @@ Each day, it:
 - Commits and pushes automatically
 - Makes your GitHub garden grow 🌿
 
-> This project is for learning GitHub Actions and automation. Real contributions should still come from real work.
-
 ---
 
 ## ✨ Features
@@ -26,3 +24,16 @@ Each day, it:
 3. It appends lines into `.keepalive`  
 4. It commits and pushes those changes  
 5. GitHub updates your contribution graph  
+
+---
+
+## 🚀 Setup
+
+1. Fork or clone this repository
+2. Ensure GitHub Actions are enabled
+3. The workflow will run automatically based on the schedule
+4. You can also trigger it manually from the Actions tab
+
+---
+
+> This project is for learning GitHub Actions and automation. Real contributions should still come from real work.
